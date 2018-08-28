@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<div class="stories">
+
+  <!-- <div > -->
+    <p *ngIf="!itens.length" class="text-center">Nenhum stories no momento</p>
+  <!-- </div> -->
+
+  <!-- <button type="button" class="btn btn-default btn-circle">+</button> -->
+
+  <app-stories-item [isSelected]="selectedItem == item" *ngFor="let item of itens" [img]="item.img" [nome]="item.nome" (click)="selectItem(item)"></app-stories-item>
+
+  <!-- <div *ngFor="let item of itens" class="stories-item"  (click)="selecionar(item.nome)">
+    <img class="rounded-circle img-circle" src="{{item.img}}">
+    <span class="nome">{{item.nome}}</span>
+  </div> -->
+</div>
+
+<div *ngIf="selectItem" class="item-detail">
+  <img src="{{selectedItem?.img}}" alt="">
+  <h1>{{selectedItem?.nome}}</h1>
+</div>
