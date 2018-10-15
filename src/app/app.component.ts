@@ -7,30 +7,56 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   itens = [
-    { img: 'http://placekitten.com/200/350', nome: 'Giovanni' },
-    { img: 'http://placekitten.com/300/380', nome: 'Diogo' },
-    { img: 'http://placekitten.com/400/300', nome: 'Farias' },
-    { img: 'http://placekitten.com/400/500', nome: 'Pacheco' },
-    { img: 'http://placekitten.com/350/500', nome: 'Diego' },
-    { img: 'http://placekitten.com/200/200', nome: 'Gualiato' },
-    { img: 'http://placekitten.com/200/300', nome: 'Lucas' },
-    { img: 'http://placekitten.com/200/300', nome: 'Matheus' },
-    { img: 'http://placekitten.com/200/300', nome: 'Gustavo' },
-    { img: 'http://placekitten.com/200/300', nome: 'Pachequilha' },
-    { img: 'http://placekitten.com/300/300', nome: 'Rato' },
-    { img: 'http://placekitten.com/200/300', nome: 'Jamal' },
-    { img: 'http://placekitten.com/208/300', nome: 'Giovanni' },
-    { img: 'http://placekitten.com/200/300', nome: 'Giovanni' },
-    { img: 'http://placekitten.com/200/300', nome: 'Giovanni' },
-    { img: 'http://placekitten.com/290/300', nome: 'Giovanni' }
+    { img: '', nome: 'People' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' },
+    // { img: 'https://png.icons8.com/android/1600/user.png', nome: 'People 1' }
   ]
+
+  unformatedData: any
+
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
+
+  formatData(rawData: Array<any>) {
+    rawData.forEach(el => {
+      const newObj = {
+        img: el.picture.medium,
+        nome: el.name.first
+      }
+
+      this.itens.push(newObj)
+    })
+  }
+
+
 
   selectedItem: Object
 
   selectItem(item: Object): void {
     if (this.selectedItem == item) {
       this.selectedItem = {
-        
+
       }
     } else {
       this.selectedItem = item
