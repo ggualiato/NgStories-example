@@ -1,4 +1,7 @@
 <div class="stories">
+
+  <div class="message">Empty</div>
+
   <app-stories-item [isSelected]="selectedItem==item" *ngFor="let item of itens" [img]="item.img" [nome]="item.nome"
     (click)="selectItem(item)">
   </app-stories-item>
