@@ -42,5 +42,4 @@ export class StoriesListComponent implements OnInit {
       this.selectedItem = item
     }
   }
-
 }
